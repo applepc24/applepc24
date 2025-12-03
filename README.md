@@ -1,7 +1,5 @@
 ## Hi there 👋
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=190&section=header&text=applepc24&fontSize=52)
-
 <div align="center">
 
 ### 👋 안녕하세요, 원준석입니다  
@@ -13,14 +11,14 @@
 <a href="https://github.com/applepc24" target="_blank">
   <img src="https://img.shields.io/badge/GitHub-111111?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
+<a href="https://applepc24.tistory.com/" target="_blank">
+  <img src="https://img.shields.io/badge/Blog-11B48A?style=for-the-badge&logo=tistory&logoColor=white"/>
+</a>
 
 
 <!--
 <a href="https://YOUR_PORTFOLIO" target="_blank">
   <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
-</a>
-<a href="https://applepc24.tistory.com/" target="_blank">
-  <img src="https://img.shields.io/badge/Blog-11B48A?style=for-the-badge&logo=tistory&logoColor=white"/>
 </a>
 <a href="https://www.linkedin.com/in/YOUR_ID" target="_blank">
   <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
