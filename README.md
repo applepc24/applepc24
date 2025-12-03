@@ -1,5 +1,3 @@
-## Hi there 👋
-
 <div align="center">
 
 ### 👋 안녕하세요, 원준석입니다  
