@@ -45,10 +45,11 @@
 
   ### Inventory OOS Analysis — 재고 품절 데이터 기반 운영 이슈 분리 분석 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/inventory-oos-analysis)
-	- 6개 매장 × 25개 상품 × 1주일 재고 데이터를 수집·정리해 매장×상품×일 단위 집계 구조 설계
-	- 평균 품절 비율과 매장 간 편차를 결합한 산점도 분석으로 전체 상품 품절 패턴을 동일 기준에서 비교
-	- 자주 품절되며 매장 편차가 큰 상품(Q1)과 전 매장 공통 품절 상품(Q4)을 구분해 배분/운영 이슈 vs 구조적 공급 이슈로 해석
-	- 매장×사이즈 단위 히트맵 분석과 oos_rate = 1 기준의 연속 품절(Persistence) 분석으로 단발성이 아닌 지속적 운영 리스크 상품을 우선 조치 대상으로 도출
+- 6개 매장 × 25개 상품 × 1주일 재고 데이터를 수집·정리해 매장×상품×일 단위 집계 구조 설계
+- 평균 품절 비율과 매장 간 편차를 결합한 산점도 분석으로 전체 상품 품절 패턴을 동일 기준에서 비교
+- 자주 품절되며 매장 편차가 큰 상품(Q1)과 전 매장 공통 품절 상품(Q4)을 구분해 배분/운영 이슈 vs 구조적 공급 이슈로 해석
+- 매장×사이즈 단위 히트맵 분석과 oos_rate = 1 기준의 연속 품절(Persistence) 분석으로 단발성이 아닌 지속적 운영 리스크 상품을 우선 조치 대상으로 도출
+- 분석 결과를 산점도·히트맵·Top 문제 상품 차트로 시각화하여 엑셀/PPT 기반 의사결정 자료로 정리
 
 ### PintOS — 운영체제 핵심 기능 구현 (C)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/PintOS-VM)
