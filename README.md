@@ -39,6 +39,7 @@
 
 ### SingSongGame — 실시간 6인 노래 맞히기 게임 (FE/BE)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/orgs/DRS-SingSongGame/repositories)
+[![DataPipe Repo](https://img.shields.io/badge/DataPipe-Repo-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/SingSongGame-SongData-pipe)
 - 실시간 WebSocket/Redis 구조로 채팅/라운드/동기화 처리
 - 서버 주도 아키텍처로 TTS 재생 타이밍 오차를 ~1.0s → 0.1s 미만으로 개선
 - 외부 API(YouTube/Spotify 등) 기반 데이터 수집 파이프라인 구축
