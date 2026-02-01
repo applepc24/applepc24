@@ -53,7 +53,7 @@
 - 서버 주도 아키텍처로 TTS 재생 타이밍 오차를 ~1.0s → 0.1s 미만으로 개선
 - 외부 API(YouTube/Spotify 등) 기반 데이터 수집 파이프라인 구축
 
-  ### Inventory OOS Analysis — 재고 품절 데이터 기반 운영 이슈 분리 분석 
+### Inventory OOS Analysis — 재고 품절 데이터 기반 운영 이슈 분리 분석 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/inventory-oos-analysis)
 - 6개 매장 × 25개 상품 × 1주일 재고 데이터를 수집·정리해 매장×상품×일 단위 집계 구조 설계
 - 평균 품절 비율과 매장 간 편차를 결합한 산점도 분석으로 전체 상품 품절 패턴을 동일 기준에서 비교
