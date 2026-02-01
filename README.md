@@ -30,7 +30,7 @@
 ## 🚀 Featured Projects
 
 ### Mini-CDC — PostgreSQL CDC와 AI 에이전트를 결합한 실시간 재고관리 플랫폼
-  [![Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mini_cdc)
+  [![Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/mini_cdc)
   [![Demo](https://img.shields.io/badge/Live-Demo-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://www.stockops.site/dashboard)
 
    - PostgreSQL(WAL) → Relay → Kafka로 이어지는 CDC 파이프라인으로 데이터 변경사항을 비동기적으로 전파 및 처리
