@@ -35,8 +35,7 @@
 
    - PostgreSQL(WAL) → Relay → Kafka로 이어지는 CDC 파이프라인으로 데이터 변경사항을 비동기적으로 전파 및 처리
    - CQRS 아키텍처를 적용, PostgreSQL(Write)과 Vector DB(Read) 모델을 분리하여 검색 성능 및 시스템 확장성 확보
-   - LLM 기반 AI 에이전트가 재고 데이터를 분석하고, 비즈니스 정책에 따라 능동적으로 보충 제안 및 데이터 변경 실행
-   - CDC로 동기화된 Vector DB를 활용하여 텍스트 데이터에 대한 빠르고 정확한 시맨틱 검색 기능 제공
+   - LLM 기반 AI 에이전트가 재고 데이터를 분석하고, 비즈니스 정책에 따라 능동적으로 보충 제안
 
 ### SnapReport — 1인 창업자 상권·매출 기반 AI 컨설팅 리포트 (FE/BE)
 [![Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/reportService)
