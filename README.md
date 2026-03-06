@@ -33,7 +33,7 @@
   [![Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/mini_cdc)
   [![Demo](https://img.shields.io/badge/Live-Demo-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://www.stockops.site/dashboard)
 
-   - PostgreSQL(WAL) → Relay → Kafka로 이어지는 CDC 파이프라인으로 데이터 변경사항을 비동기적으로 전파 및 처리
+   - PostgreSQL → Relay → Kafka로 이어지는 CDC 파이프라인으로 데이터 변경사항을 비동기적으로 전파 및 처리
    - CQRS 아키텍처를 적용, PostgreSQL(Write)과 Vector DB(Read) 모델을 분리하여 검색 성능 및 시스템 확장성 확보
    - LLM 기반 AI 에이전트가 재고 데이터를 분석하고, 비즈니스 정책에 따라 능동적으로 보충 제안
    - Slack OAuth 연동으로 워크스페이스/채널에 설치하고, 재고 이벤트·재입고 리포트를 알림으로 전송(운영 액션 연결)
