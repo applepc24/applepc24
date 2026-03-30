@@ -29,7 +29,7 @@
 
 ## 🚀 Featured Projects
 
-### stackops — 실시간 재고관리 플랫폼
+### stockops — 실시간 재고관리 플랫폼
   [![Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/mini_cdc)
   [![Demo](https://img.shields.io/badge/Live-Demo-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://www.stockops.site/dashboard)
 
