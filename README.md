@@ -1,8 +1,10 @@
 <div align="center">
 
-### 👋 안녕하세요, 원준석입니다  
-사용자가 좋아하고 자주 찾는 “살아있는 서비스/콘텐츠”를 만드는 걸 좋아하는 주니어 개발자입니다.  
-풀스택(Frontend/Backend) + 데이터 파이프라인 + 운영/성능까지 끝까지 책임지는 개발을 지향합니다.
+### 👋 안녕하세요, 원준석입니다
+Label Studio 기반 수작업 라벨링부터 모델 기반 프리라벨링 품질 관리, YOLOv8 OBB 추론 파이프라인 설계까지  
+ML 학습 데이터 전 과정을 직접 경험한 주니어 데이터 엔지니어입니다.  
+Kafka·Airflow·BigQuery 기반 데이터 수집·품질 검증 파이프라인 설계 경험을 바탕으로  
+데이터 수집부터 품질 관리까지 엔드투엔드로 기여할 수 있습니다.
 
 <br/>
 
@@ -13,81 +15,116 @@
   <img src="https://img.shields.io/badge/Blog-11B48A?style=for-the-badge&logo=tistory&logoColor=white"/>
 </a>
 
-
-<!--
-<a href="https://YOUR_PORTFOLIO" target="_blank">
-  <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
-</a>
-<a href="https://www.linkedin.com/in/YOUR_ID" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
--->
-
 </div>
 
 ---
 
 ## 🚀 Featured Projects
 
-### stockops — 실시간 재고관리 플랫폼
-  [![Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/mini_cdc)
-  [![Demo](https://img.shields.io/badge/Live-Demo-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://www.stockops.site/dashboard)
+### 항만 CCTV 컨테이너 객체 탐지 · 학습 데이터셋 구축 및 추론 파이프라인
+[![Repo](https://img.shields.io/badge/GitHub-데이터구축-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/container-code-labeling)
+[![Repo](https://img.shields.io/badge/GitHub-웹서비스-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/labeling_web)
 
-   - PostgreSQL → Relay → Kafka로 이어지는 CDC 파이프라인으로 데이터 변경사항을 비동기적으로 전파 및 처리
-   - CQRS 아키텍처를 적용, PostgreSQL(Write)과 Vector DB(Read) 모델을 분리하여 검색 성능 및 시스템 확장성 확보
-   - LLM 기반 AI 에이전트가 재고 데이터를 분석하고, 비즈니스 정책에 따라 능동적으로 보충 제안
-   - Slack OAuth 연동으로 워크스페이스/채널에 설치하고, 재고 이벤트·재입고 리포트를 알림으로 전송(운영 액션 연결)
+- Label Studio OBB 방식으로 6클래스 수작업 라벨링 1,350장 직접 수행 및 클래스별 품질 기준 수립
+- 1차 모델 기반 프리라벨링 9,896장 검수·수정 과정에서 라벨 품질 편차 확인 → 2차 학습 mAP@0.5 0.78→0.52 하락 원인 분석, Confusion Matrix·PR Curve·F1 Curve 비교로 background→container 오탐율 0.24→0.52 증가 특정, 1차 모델 채택 근거 도출
+- 수천 장 프레임 수작업 선별 비효율 문제를 OpenCV GUI 기반 인터랙티브 선택기(Y/N/B 키 제어)로 해결
+- 영상 업로드 → 프레임 추출 → YOLOv8 OBB 추론 → 결과 정규화·검증 → SQLite 적재의 ingest/inference/transform/load 4단계 추론 파이프라인 직접 설계·구현
 
-### SnapReport — 1인 창업자 상권·매출 기반 AI 컨설팅 리포트 (FE/BE)
-[![Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/reportService)
-[![Demo](https://img.shields.io/badge/Live-Demo-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://www.snapreport.cloud/)
-- BullMQ 기반 비동기 작업 설계(POST jobId → GET status/result)로 LLM/RAG 장기 작업을 안정적으로 운영
-- tool-calling 기반 Agentic RAG 파이프라인으로 트렌드/임대료 등 근거를 결합해 조언 생성
-- PostgreSQL + TypeORM으로 행정동 지표를 병렬 조회하고, 매출 추세 기반 리스크 레벨 정형화
-- k6 부하로 작업 큐 enqueue + status 조회 경로 안정성 검증
+**Tech Stack:** YOLOv8 OBB, Label Studio, Python, OpenCV, NumPy, Streamlit, SQLite
 
-### SingSongGame — 실시간 6인 노래 맞히기 게임 (FE/BE)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/orgs/DRS-SingSongGame/repositories)
-[![DataPipe Repo](https://img.shields.io/badge/DataPipe-Repo-0A66C2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/SingSongGame-SongData-pipe)
-- 실시간 WebSocket/Redis 구조로 채팅/라운드/동기화 처리
-- 서버 주도 아키텍처로 TTS 재생 타이밍 오차를 ~1.0s → 0.1s 미만으로 개선
-- 외부 API(YouTube/Spotify 등) 기반 데이터 수집 파이프라인 구축
+---
 
-### Inventory OOS Analysis — 재고 품절 데이터 기반 운영 이슈 분리 분석 
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/inventory-oos-analysis)
-- 6개 매장 × 25개 상품 × 1주일 재고 데이터를 수집·정리해 매장×상품×일 단위 집계 구조 설계
-- 평균 품절 비율과 매장 간 편차를 결합한 산점도 분석으로 전체 상품 품절 패턴을 동일 기준에서 비교
-- 자주 품절되며 매장 편차가 큰 상품(Q1)과 전 매장 공통 품절 상품(Q4)을 구분해 배분/운영 이슈 vs 구조적 공급 이슈로 해석
-- 매장×사이즈 단위 히트맵 분석과 oos_rate = 1 기준의 연속 품절(Persistence) 분석으로 단발성이 아닌 지속적 운영 리스크 상품을 우선 조치 대상으로 도출
-- 분석 결과를 산점도·히트맵·Top 문제 상품 차트로 시각화하여 엑셀/PPT 기반 의사결정 자료로 정리
+### Job Postings Data Platform — 채용공고 수집·적재 데이터 플랫폼
+[![Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/Lead-insight-platform)
 
-### PintOS — 운영체제 핵심 기능 구현 (C)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/PintOS-VM)
-- priority scheduling / donation, syscall, VM(lazy loading, stack growth) 등 커널 핵심 메커니즘 구현
-- 동기화/레이스 컨디션 디버깅과 테스트 기반 검증 경험
+- 채용공고 fetch 실패 시 작업 유실 문제를 DLQ + Replay 시스템으로 해결, failed_stage / error_type / retry_count 기반 격리·추적으로 재처리 가능한 운영 구조 구축
+- 동일 공고 중복 적재 문제를 Worker 레벨(job_id 기반) + BigQuery intermediate 레벨(source + original_url 기준 ROW_NUMBER dedup) 다층 구조로 해결
+- S3 raw / processed / curated 3레이어 분리로 원본 HTML 보존 및 단계별 재처리 기준점 확보
+- Airflow(orchestration) / BigQuery+Grafana(observability) 역할 분리로 실행과 관측을 독립적으로 운영
+
+**Tech Stack:** Python, Kafka, Amazon S3, BigQuery, Airflow, Grafana
+
+---
+
+### SingSongGame — K-POP 하이라이트 데이터셋 구축 파이프라인
+[![Repo](https://img.shields.io/badge/GitHub-DataPipe-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/SingSongGame-SongData-pipe)
+
+- songs.txt 입력 기반 멀티소스 수집 파이프라인으로 YouTube·Genius·Spotify·Last.fm 데이터를 자동 수집해 1,100곡 규모 K-POP 하이라이트 데이터셋 구축
+- YouTube 다단계 검색(Lv1~Lv3) + 블랙리스트 필터 + 스코어링으로 노이즈 후보 제거, 원본 음원만 선별
+- 수작업 시 10곡 기준 30분 이상 소요되던 작업을 자동화 후 5분으로 단축 (6배 향상)
+- dataset.csv(title, artist, audio_url, lyrics, tags, hint, answer) 7개 필드 고정 스키마로 팀 공통 데이터셋 완성
+
+**Tech Stack:** Python, yt-dlp, librosa, YouTube API, Genius API, Spotify API, Amazon S3
 
 ---
 
 ## 🧰 Tech Stack
 
-**Frontend**  
-![Next.js](https://img.shields.io/badge/Next.js-111111?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-111111?style=for-the-badge&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-111111?style=for-the-badge&logo=typescript&logoColor=3178C6)
+**Data Engineering**
+![Kafka](https://img.shields.io/badge/Kafka-111111?style=for-the-badge&logo=apachekafka&logoColor=white)
+![Airflow](https://img.shields.io/badge/Airflow-111111?style=for-the-badge&logo=apacheairflow&logoColor=white)
+![BigQuery](https://img.shields.io/badge/BigQuery-111111?style=for-the-badge&logo=googlebigquery&logoColor=4285F4)
+![Python](https://img.shields.io/badge/Python-111111?style=for-the-badge&logo=python&logoColor=3776AB)
 
-**Backend**  
-![Node.js](https://img.shields.io/badge/Node.js-111111?style=for-the-badge&logo=nodedotjs&logoColor=339933)
-![NestJS](https://img.shields.io/badge/NestJS-111111?style=for-the-badge&logo=nestjs&logoColor=E0234E)
-![Flask](https://img.shields.io/badge/Flask-111111?style=for-the-badge&logo=flask&logoColor=FFFFFF)
-![FastAPI](https://img.shields.io/badge/FastAPI-111111?style=for-the-badge&logo=fastapi&logoColor=FFFFFF)
+**ML / Data**
+![YOLOv8](https://img.shields.io/badge/YOLOv8_OBB-111111?style=for-the-badge&logo=github&logoColor=white)
+![Label Studio](https://img.shields.io/badge/Label_Studio-111111?style=for-the-badge&logo=labelstudio&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-111111?style=for-the-badge&logo=opencv&logoColor=5C3EE8)
 
-**DB / Cache / Queue**  
+**Database**
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-111111?style=for-the-badge&logo=postgresql&logoColor=4169E1)
 ![MySQL](https://img.shields.io/badge/MySQL-111111?style=for-the-badge&logo=mysql&logoColor=4479A1)
 ![Redis](https://img.shields.io/badge/Redis-111111?style=for-the-badge&logo=redis&logoColor=DC382D)
+![SQLite](https://img.shields.io/badge/SQLite-111111?style=for-the-badge&logo=sqlite&logoColor=003B57)
 
-**DevOps / Tools**  
-![AWS](https://img.shields.io/badge/AWS-111111?style=for-the-badge&logo=amazonaws&logoColor=FF9900)
+**Cloud / DevOps**
+![AWS S3](https://img.shields.io/badge/AWS_S3-111111?style=for-the-badge&logo=amazons3&logoColor=FF9900)
+![AWS EC2](https://img.shields.io/badge/AWS_EC2-111111?style=for-the-badge&logo=amazonec2&logoColor=FF9900)
 ![Docker](https://img.shields.io/badge/Docker-111111?style=for-the-badge&logo=docker&logoColor=2496ED)
-![k6](https://img.shields.io/badge/k6-111111?style=for-the-badge&logo=k6&logoColor=7D64FF)
-![Git](https://img.shields.io/badge/Git-111111?style=for-the-badge&logo=git&logoColor=F05032)
+![Grafana](https://img.shields.io/badge/Grafana-111111?style=for-the-badge&logo=grafana&logoColor=F46800)
+
+---
+
+## 📚 기본기 (운영체제·네트워크)
+
+### PintOS — 운영체제 핵심 기능 구현
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/PintOS-VM)
+- 우선순위 스케줄링 및 Priority Donation 구현을 통해 OS 수준 동시성·락 경합 문제 해결
+- 시스템 콜 인터페이스 및 User↔Kernel 모드 전환 흐름 완성, 포인터 검증 기반 커널 방어 로직 구현
+- Lazy Loading·Page Fault 처리 포함 가상 메모리 서브시스템 구현 및 동기화 리팩토링
+- 50+ 테스트 기반 TDD 방식으로 Race/VM/Process 안정성 검증
+
+### 운영체제 인터뷰 스터디 (OSTEP 기반)
+- OSTEP 기반 OS 면접 Q&A 스터디 운영 및 기술 블로그 정리
+
+---
+
+## 🛠 기타 프로젝트 (풀스택)
+
+<details>
+<summary>접어두기 (클릭해서 펼치기)</summary>
+
+### stockops — 실시간 재고관리 플랫폼
+[![Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/mini_cdc)
+[![Demo](https://img.shields.io/badge/Live-Demo-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://www.stockops.site/dashboard)
+
+- PostgreSQL → Relay → Kafka로 이어지는 CDC 파이프라인으로 데이터 변경사항을 비동기적으로 전파 및 처리
+- CQRS 아키텍처를 적용, PostgreSQL(Write)과 Vector DB(Read) 모델을 분리하여 검색 성능 및 시스템 확장성 확보
+- LLM 기반 AI 에이전트가 재고 데이터를 분석하고, 비즈니스 정책에 따라 능동적으로 보충 제안
+- Slack OAuth 연동으로 워크스페이스/채널에 설치하고, 재고 이벤트·재입고 리포트를 알림으로 전송
+
+### SnapReport — 1인 창업자 상권·매출 기반 AI 컨설팅 리포트
+[![Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/reportService)
+[![Demo](https://img.shields.io/badge/Live-Demo-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://www.snapreport.cloud/)
+
+- BullMQ 기반 비동기 작업 설계로 LLM/RAG 장기 작업을 안정적으로 운영
+- tool-calling 기반 Agentic RAG 파이프라인으로 트렌드/임대료 등 근거를 결합해 조언 생성
+- k6 부하테스트로 작업 큐 enqueue + status 조회 경로 안정성 검증
+
+### Inventory OOS Analysis — 재고 품절 데이터 기반 운영 이슈 분석
+[![Repo](https://img.shields.io/badge/GitHub-Repo-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/applepc24/inventory-oos-analysis)
+
+- 6개 매장 × 25개 상품 × 1주일 재고 데이터 수집·정리 및 매장×상품×일 단위 집계 구조 설계
+- 평균 품절 비율과 매장 간 편차를 결합한 산점도 분석으로 배분/운영 이슈 vs 구조적 공급 이슈 구분
+
+</details>
